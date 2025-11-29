@@ -1,24 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="12dp">
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="1dp">
 
-    <TextView
-        android:id="@+id/tvExerciseName"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Incline Dumbbell Press"
-        android:textStyle="bold"
-        android:textSize="15sp" />
+        android:padding="12dp"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvSetsReps"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="4 sets × 8–10 reps"
-        android:textSize="14sp"
-        android:alpha="0.85"
-        android:layout_marginTop="2dp"/>
-</LinearLayout>
+        <EditText
+            android:id="@+id/etExerciseName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/exercise_name"
+            android:inputType="textCapWords"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp">
+
+            <EditText
+                android:id="@+id/etSets"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/sets"
+                android:inputType="number"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/etReps"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/reps"
+                android:inputType="number"
+                android:textAlignment="center"/>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

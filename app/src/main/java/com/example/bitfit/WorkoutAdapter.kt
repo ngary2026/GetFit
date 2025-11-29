@@ -1,12 +1,18 @@
 package com.example.bitfit
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-data class WorkoutUi(val name: String, val dateLabel: String, val exerciseCount: Int)
+data class WorkoutUi(
+    val id: Long,
+    val name: String,
+    val dateLabel: String,
+    val exerciseCount: Int
+)
 
 class WorkoutAdapter(
     private var items: List<WorkoutUi> = emptyList(),
@@ -16,6 +22,7 @@ class WorkoutAdapter(
     inner class VH(v: View) : RecyclerView.ViewHolder(v) {
         private val name = v.findViewById<TextView>(R.id.tvWorkoutName)
         private val meta = v.findViewById<TextView>(R.id.tvWorkoutMeta)
+        @SuppressLint("SetTextI18n")
         fun bind(item: WorkoutUi) {
             name.text = item.name
             meta.text = "${item.dateLabel} • ${item.exerciseCount} exercises"
