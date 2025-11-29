@@ -32,20 +32,18 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![Video Walkthrough](project5_walkthrough.gif)
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+GIF created with ...  QuickMovie + Imgur
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+One major challenge was ensuring that exercise data, like names, sets, and reps, was correctly preserved as the user typed. Initially, new exercise rows stored only default empty values internally, so nothing saved to the database.
 
-## License
+Setting up Room with two entities (WorkoutEntity and ExerciseEntity) exposed several dependency and annotation issues. Early on, the AppDatabase class only referenced the workouts table, causing Room to complain that the exercises table did not exist. Fixing this required adding ExerciseEntity to the entities array and updating the database version.
+
+## License - NONE
 
     Copyright [yyyy] [name of copyright owner]
 
